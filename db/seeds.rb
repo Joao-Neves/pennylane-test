@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+JSON.parse(File.read('./db/recipes-en.json')).each do |recipe|
+  recipe_object = Recipe.create(
+    title: recipe['title'],
+    cook_time: recipe['cook_time'],
+    prep_time: recipe['prep_time'],
+    ratings: recipe['ratings'],
+    cuisine: recipe['cuisine'],
+    category: recipe['category'],
+    author: recipe['author'],
+    image: recipe['image'],
+  )
+
+  recipe['ingredients'].each do |ingredient|
+    Ingredient.create(name_and_quantity: ingredient, recipe: recipe_object)
+  end
+end
