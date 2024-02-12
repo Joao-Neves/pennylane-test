@@ -29,7 +29,23 @@ GET https://pennylane-test.fly.dev/recipes/search?ingredients=cinnamon,egg
         "author": "bluegirl",
         "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F10%2F26%2Fcornbread-1.jpg",
         "created_at": "2024-02-09T11:49:54.278Z",
-        "updated_at": "2024-02-09T11:49:54.278Z"
+        "updated_at": "2024-02-09T11:49:54.278Z",
+        "ingredients": [
+            {
+              "id": 1,
+              "name_and_quantity": "1 cup all-purpose flour",
+              "recipe_id": 1,
+              "created_at": "2024-02-09T11:49:54.291Z",
+              "updated_at": "2024-02-09T11:49:54.291Z"
+            },
+            {
+              "id": 2,
+              "name_and_quantity": "1 cup yellow cornmeal",
+              "recipe_id": 1,
+              "created_at": "2024-02-09T11:49:54.294Z",
+              "updated_at": "2024-02-09T11:49:54.294Z"
+            }
+          ]
     },
     {
         "id": 2,
@@ -42,7 +58,16 @@ GET https://pennylane-test.fly.dev/recipes/search?ingredients=cinnamon,egg
         "author": "deleteduser",
         "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg",
         "created_at": "2024-02-09T11:49:54.303Z",
-        "updated_at": "2024-02-09T11:49:54.303Z"
+        "updated_at": "2024-02-09T11:49:54.303Z",
+        "ingredients": [
+            {
+              "id": 9,
+              "name_and_quantity": "3 (12 ounce) packages refrigerated biscuit dough",
+              "recipe_id": 2,
+              "created_at": "2024-02-09T11:49:54.304Z",
+              "updated_at": "2024-02-09T11:49:54.304Z"
+            }
+        ]
     }
 ]
 ```

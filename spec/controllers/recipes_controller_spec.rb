@@ -93,7 +93,7 @@ RSpec.describe 'RecipesController', type: :request do
         it 'returns all the relevant recipes' do
           get '/recipes/search?ingredients=carrots'
 
-          expect(response.body).to eq([cozido_a_portuguesa, carrot_soup].to_json)
+          expect(response.body).to eq([cozido_a_portuguesa, carrot_soup].to_json(include: :ingredients))
         end
       end
 
@@ -101,7 +101,7 @@ RSpec.describe 'RecipesController', type: :request do
         it 'returns all the relevant recipes' do
           get '/recipes/search?ingredients=carrots,yolks'
 
-          expect(response.body).to eq([cozido_a_portuguesa, carrot_soup, pastel_de_nata].to_json)
+          expect(response.body).to eq([cozido_a_portuguesa, carrot_soup, pastel_de_nata].to_json(include: :ingredients))
         end
       end
     end
