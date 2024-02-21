@@ -1,0 +1,20 @@
+<%= turbo_frame_tag "recipes" do %>
+  <% unless @recipe.image.blank? %>
+    <img src="<%= @recipe.image %>" alt="<%= @recipe.title %>" width="500">
+  <% end %>
+  <h1><%= @recipe.title %></h1>
+  <p>Prep time: <%= @recipe.prep_time %>min</p>
+  <p>Cook time: <%= @recipe.cook_time %>min</p>
+  <p>Cuisine: <%= @recipe.cuisine %></p>
+  <p>Category: <%= @recipe.category %></p>
+  <p>Author: <%= @recipe.author %></p>
+  <p>Ratings: <%= @recipe.ratings %></p>
+  <p>Ingredients:</p>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name_and_quantity %></li>
+    <% end %>
+  </ul>
+
+  <p><%= link_to "Back", recipes_path %></p>
+<% end %>
