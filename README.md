@@ -1,21 +1,42 @@
 # README
-
+- [README](#readme)
+    * [Usage](#usage)
+        + [UI](#ui)
+        + [API](#api)
+            - [Example](#example)
+                * [Request](#request)
+                * [Response](#response)
+    * [Local set-up](#local-set-up)
+    * [Project dependencies](#project-dependencies)
 ## Usage
-The app is deployed in fly.io and can be reached on https://pennylane-test.fly.dev/.
+### UI
+The app is deployed in fly.io and can be reached on https://pennylane-test.fly.dev/recipes.
 
+![img.png](img.png)
+
+You can use the "Search by ingredient" field to get recipes with the ingredients you typed in.
+For multiple ingredients separate them with a space: e.g.: "cinnamon egg".
+
+Click the "Next page >" link to go the following page. Click the "< Previous page" link to go to the previous page.
+
+Use the "View Recipe" links to view the full details of a given recipe.
+
+![img_1.png](img_1.png)
+
+### API
 There's one single endpoint to search for recipes: https://pennylane-test.fly.dev/recipes/search.
 This endpoint accepts the `ingredients` query parameter.
 This parameter is a comma separated list of ingredients to search for.
 If nothing is passed then the endpoint will return an empty response otherwise it'll return the recipes whose ingredients match the search.
 The responses are always in JSON format
 
-### Example
-#### Request
+#### Example
+##### Request
 ```http request
 GET https://pennylane-test.fly.dev/recipes/search?ingredients=cinnamon,egg
 ```
 
-#### Response
+##### Response
 ```json
 [
     {
