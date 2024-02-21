@@ -1,3 +1,4 @@
 <%= turbo_frame_tag "recipes" do %>
   <%= render @recipes %>
+  <%= render "pager", pagy: @pagy %>
 <% end %>

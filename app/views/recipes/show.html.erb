@@ -14,4 +14,4 @@
     <li><%= ingredient.name_and_quantity %></li>
   <% end %>
 </ul>
-<p><%= link_to "Back", recipes_path %></p>
+<p><%= link_to "Back", recipes_path(query: @query, page: @page) %></p>

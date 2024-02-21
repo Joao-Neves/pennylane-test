@@ -1,0 +1,17 @@
+<br>
+<% if pagy.prev %>
+  <%= link_to(
+        "< Previous page",
+        recipes_path(page: pagy.prev, query: @query),
+        data: { turbo_action: "advance" }
+      ) %>
+<% end %>
+Page <%= pagy.page %> of <%= pagy.pages %>
+<% if pagy.next %>
+  <%= link_to(
+        "Next page >",
+        recipes_path(page: pagy.next, query: @query),
+        data: { turbo_action: "advance" }
+      ) %>
+<% end %>
+<p><%== pagy_info pagy %></p>

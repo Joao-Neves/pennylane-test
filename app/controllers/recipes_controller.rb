@@ -1,17 +1,25 @@
 class RecipesController < ApplicationController
+  PAGE_SIZE = 10
+  private_constant :PAGE_SIZE
   def index
     ingredients = params[:query]
-    return @recipes = Recipe.all if ingredients.nil? || ingredients.empty?
+    if ingredients.blank?
+      @pagy, @recipes = pagy(Recipe.all, items: PAGE_SIZE)
+      return
+    end
 
-    @recipes = SearchRecipes.by_ingredients(ingredients.split(' '))
+    @query = ingredients
+    @pagy, @recipes = pagy(SearchRecipes.by_ingredients(ingredients.split(' ')), items: PAGE_SIZE)
   end
 
   def show
+    @query = params[:query]
+    @page = params[:page]
     @recipe = Recipe.find(params[:id])
   end
   def search
     ingredients = params[:ingredients]
-    return render json: [] if ingredients.nil? || ingredients.empty?
+    return render json: [] if ingredients.blank?
 
     render json: SearchRecipes.by_ingredients(ingredients.split(',')).to_json(include: :ingredients)
 

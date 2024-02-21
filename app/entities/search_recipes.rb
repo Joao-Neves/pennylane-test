@@ -6,6 +6,6 @@ class SearchRecipes
 
     Recipe.joins(:ingredients)
           .where(ingredients_query, *ingredients.map { |i| "%#{i}%" })
-          .uniq
+          .distinct
   end
 end
